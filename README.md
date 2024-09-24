@@ -24,7 +24,7 @@ nmap -sv -O 192.168.0.11
 
 **Службы** - ftp, ssh, telnet, smtp, domain, http, rpcbind, netbios-ssn, exec, login, tcpwrapped, java-rmi, bindshell, nfs, ftp, mysql, postgresql, vnc, X11, irc, ajp13, http
 
-![screen](https://github.com/Chibrik0ff/sflt-homeworks3/blob/main/img/img1.png)
+![screen](https://github.com/Chibrik0ff/sdb-homeworks-13-01/blob/main/img/img1.png)
   
 - Какие уязвимости были вами обнаружены? (список со ссылками: достаточно трёх уязвимостей)
 ```
@@ -51,25 +51,25 @@ https://www.exploit-db.com/exploits/31965
 nmap -sS <ip> - TCP SYN сканирование. SYN это используемый по умолчанию и наиболее популярный тип сканирования. 
 ```
 
-![screen](https://github.com/Chibrik0ff/sflt-homeworks3/blob/main/img/img2.png)
+![screen](https://github.com/Chibrik0ff/sdb-homeworks-13-01/blob/main/img/img2.png)
 
 **FIN** - Nmap посылает FIN-пакет, в TCP заголовок ставится флаг FIN. Согласно RFC 793, на прибывший FIN-пакет на закрытый порт сервер должен ответить пакетом RST. FIN-пакеты на открытые порты должны игнорироваться сервером. По этому различию становится возможным отличить закрытый порт от открытого. 
 ```
 nmap -sF <ip> - FIN сканирование. Устанавливается только TCP FIN бит.
 ```
 
-![screen](https://github.com/Chibrik0ff/sflt-homeworks3/blob/main/img/img3.png)
+![screen](https://github.com/Chibrik0ff/sdb-homeworks-13-01/blob/main/img/img3.png)
 
 **Xmas** - Устанавливаются FIN, PSH и URG флаги. Если в результате FIN-сканирования мы получили список открытых портов, то это не Windows. Если же все эти методы выдали результат, что все порты закрыты, а SYN-сканирование обнаружило открытые порты, то мы скорей всего имеете дело с ОС Windows, Cisco, BSDI, IRIX, HP/UX и MVS. Все эти ОС не отправляют RST-пакеты.
 ```
 nmap -sX <ip> - Xmas сканирование. Устанавливаются FIN, PSH и URG флаги.
 ```
 
-![screen](https://github.com/Chibrik0ff/sflt-homeworks3/blob/main/img/img4.png)
+![screen](https://github.com/Chibrik0ff/sdb-homeworks-13-01/blob/main/img/img4.png)
 
 **UDP** - На каждый порт сканируемой машины отправляется UDP-пакет без данных. Этот метод используется для определения, какие UDP-порты на сканируемом хосте являются открытыми.Если в ответ было получено ICMP-сообщение "порт недоступен", это означает, что порт закрыт. В противном случае предполагается, что сканируемый порт открыт.
 ```
 nmap -sU <ip> - Различные типы UDP сканирования. Большой проблемой при UDP сканировании является его медленная скорость работы.
 ```
 
-![screen](https://github.com/Chibrik0ff/sflt-homeworks3/blob/main/img/img5.png)
+![screen](https://github.com/Chibrik0ff/sdb-homeworks-13-01/blob/main/img/img5.png)
